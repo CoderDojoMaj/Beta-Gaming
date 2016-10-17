@@ -1,10 +1,13 @@
 # Beta-Gaming
 
-*¿Qué es Beta-Gaming?
-    *Beta-Gaming es una red social para gamers.
+-¿Qué es Beta-Gaming?
 
-*¿Por qué usar Beta-Gaming?
-    *Porque es una red social multiplataforma para gamers de todo el mundo. Con Machine-Learning, AI...
+    -Beta-Gaming es una red social para gamers.
 
-*¿Qué ventajas tiene Beta-Gaming?
-    *Crea torneos para los jugadores y les da recomendaciones de juegos.
+-¿Por qué usar Beta-Gaming?
+
+    -Porque es una red social multiplataforma para gamers de todo el mundo. Con Machine-Learning, AI...
+
+-¿Qué ventajas tiene Beta-Gaming?
+    
+    -Crea torneos para los jugadores y les da recomendaciones de juegos.
