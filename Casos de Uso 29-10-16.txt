@@ -1,0 +1,26 @@
+Casos de Uso
+
+log in de usuario
+registro de usuario
+resetear contraseña
+conexion de perfil
+eleccion de juegos
+registro de nuevo juego
+personalizar el perfil
+crear partidas
+crear grupos
+añadir amigos
+foro
+chat
+
+
+Usuario:
+ - Crear partidas
+ - Unirse a partidas
+ - Buscar partidas
+ - Buscar jugadores
+ - Añadir amigos
+ - logarse, personalizar el perfil
+ - Buscar juegos
+ - Añadir juegos
+ - Sistema de reputación
