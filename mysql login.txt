@@ -1,0 +1,8 @@
+1.- Arrancar servidor mysql
+mysqld.exe
+
+2.- Cambiar password usuario root
+mysquladmin.exe -u root password root
+
+3.- conectarse a base de datos
+mysql -u root -proot
