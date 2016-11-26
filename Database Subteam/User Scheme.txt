@@ -1,0 +1,23 @@
+> USUARIOS <
+
+| ID | Nickname | Password Hash | Nombre | Apellidos | Email | Reputación | Fecha Registro | Fecha Nacimiento | Skype | 
+  1     Pepote     $d5r6a6sdta     Pepe      Gómez   xxx@g.com     70
+  2     ......      .........       ..
+
+
+
+ID(uint): 		Número de identificación del usuario 
+Nickname(str): 		Nombre elegido por el usuario y que se muestra al público
+Password Hash(str): 	Contraseña "cifrada" del usuario. Se usa para verificar el login
+Nombre(str): 		Nombre real del usuario. Solo se muestra a los amigos 
+Apellidos(str):	 	Lo mismo que arriba
+Email(str): 		Dirección de contacto del usuario. También sirve para logearse. Dirección donde se envian los emails de recuperación u otros avisos de la web
+Reputación(int): 	Número que indica la reputación del usuario según el número de partidas en las que ha participado.
+Fecha Registro(fecha):
+Fecha Nacimiento(fecha):
+Usuario Skype(str):
+
+int -> Números positivos y negativos
+uint -> Números sin signo
+str -> Texto 
+fecha -> Sistema Epoch
