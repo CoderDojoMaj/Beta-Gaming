@@ -1,4 +1,5 @@
 # Beta-Gaming
+![alt tag](templogo.png)
 
 #### ¿Qué es Beta-Gaming?
 
