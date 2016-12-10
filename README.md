@@ -1,6 +1,6 @@
 # Beta-Gaming
 <p align="center">
-![alt tag](templogo.png)
+  <img src=templogo.png>
 </p>
 
 #### ¿Qué es BetaGaming?
