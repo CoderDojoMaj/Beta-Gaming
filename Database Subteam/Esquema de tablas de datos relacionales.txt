@@ -7,11 +7,7 @@ user(id) | juegos(id)
 Partidas en las que esta cada usuario
 user(id) | partidas(id)
 
-
-3///////////////////////////////////////////////////////////////
-Partidas creadas por el ususario
-partidas(id) | user(id)
-
+-
 
 4///////////////////////////////////////////////////////////////
 Usuarios Amigos - Lista de amistades
@@ -25,14 +21,14 @@ user(id) | user(id)
 
 6///////////////////////////////////////////////////////////////
 Tipos de juegos
-juego(id) | ClasificaciónJuegos(id)
+juego(id) | ClasificaciÃ³nJuegos(id)
 
 
 7///////////////////////////////////////////////////////////////
 Juego de la partida
-juego(id) | partida(id) ---> O al revés
+juego(id) | partida(id) ---> O al revÃ©s
 
 
 8////////////////////////////////////////////////////////////////
-Categoría partida
+CategorÃ­a partida
 partida(id) | categoriaPartida(id)
