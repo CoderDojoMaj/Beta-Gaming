@@ -1,0 +1,39 @@
+This is a paper on security. Explais some of the actions to have in account during development.
+
+Firstly, we must know how BetaGaming is designed:
+
+	------------------------------------------------
+	-             WEB BROWSER INTERFACE            -
+	------------------------------------------------
+        	                 |
+.................................|................................
+                        	 |
+	------------------------------------------------
+	-                  SERVER CORE                 -
+	------------------------------------------------
+        	                 |
+                	         |
+                        	 |
+	------------------------------------------------
+	-             UNDERLYING DATABASES             -
+	------------------------------------------------
+
+WEB INTERFACE -> runs on the client side, so we can't trust on it.
+SERVER CORE   -> receives input and must parse it, grabs database information, and sends it again to the interface.
+DATABABSES    -> store ALL the information, such as server configuration, user credentials... 
+
+
+# SECURITY MEASURES 
+Actions to take to avoid information disclosure, leaks, and hacks.
+
+*Client Side; There aren't much things to do here. The most important point is to avoid reflected XSS attacks which may lead to cookie stealing.
+*Server Side; Must handle most issues. Must sanitize all client side input to avoid persistent XSS attacks and code injection and SQL injections attacks.
+*Database; Is not a scriptable or programmable environment. No real-time protection required.
+
+
+# MITIGATION
+Tasks performed to ensure system and data integrity in the situation of a breach.
+
+*Client Side; 
+*Server Sie; Must contain hashing algorithms to securely store new user passwords. BCrypt with salted SHA hashes is the best option. 
+*Database; In the case of a breach, the chances of abusing of the data is limited.
