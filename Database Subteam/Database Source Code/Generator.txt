@@ -1,0 +1,85 @@
+CREATE TABLE `users` (
+  `user_id` int(11) NOT NULL,
+  `nickname` varchar(25) NOT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `name` varchar(25) DEFAULT NULL,
+  `surname` varchar(25) DEFAULT NULL,
+  `email` varchar(50) NOT NULL,
+  `rep` int(11) DEFAULT NULL,
+  `registry_date` date DEFAULT NULL,
+  `born_date` date DEFAULT NULL,
+  `skype_user` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`user_id`)
+);
+
+CREATE TABLE `game_genre` (
+  `genre` varchar(100) DEFAULT NULL COMMENT 'En esta columna se describe brevemente el tipo de juego (shooter, sandbox, etc..)',
+  `genre_id` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`genre_id`)
+);
+
+CREATE TABLE `games` (
+  `game_id` int(11) NOT NULL DEFAULT '0',
+  `game_name` varchar(50) DEFAULT NULL,
+  `min_age` int(11) DEFAULT NULL,
+  `img_url` varchar(255) DEFAULT NULL,
+  `game_desc` varchar(255) DEFAULT NULL,
+  `genre_id` int(11) NOT NULL,
+  PRIMARY KEY (`game_id`),
+  CONSTRAINT `relacion_genero_juego_fk` FOREIGN KEY (`genre_id`) REFERENCES `game_genre` (`genre_id`)
+);
+
+CREATE TABLE `matches` (
+  `match_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Match unique ID',
+  `max_players` int(11) DEFAULT NULL COMMENT 'Max number of players in the match',
+  `min_players` int(11) DEFAULT NULL COMMENT 'Min number of players in the match',
+  `start_date` date DEFAULT NULL,
+  `end_date` date DEFAULT NULL,
+  `owner_id` int(11) NOT NULL,
+  `selected_game_id` int(11) DEFAULT NULL COMMENT 'Reference to game ID.',
+  PRIMARY KEY (`match_id`),
+  KEY `partidas_users_fk` (`owner_id`),
+  KEY `partidas_juegos_fk` (`selected_game_id`),
+  CONSTRAINT `partidas_juegos_fk` FOREIGN KEY (`selected_game_id`) REFERENCES `games` (`game_id`),
+  CONSTRAINT `partidas_users_fk` FOREIGN KEY (`owner_id`) REFERENCES `users` (`user_id`)
+);
+
+
+CREATE TABLE `blocklist` (
+  `user_id` int(11) NOT NULL,
+  `blocked_user_id` int(11) NOT NULL,
+  KEY `blocklist_users1_fk` (`user_id`),
+  KEY `blocklist_users2_fk` (`blocked_user_id`),
+  CONSTRAINT `blocklist_users1_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
+  CONSTRAINT `blocklist_users2_fk` FOREIGN KEY (`blocked_user_id`) REFERENCES `users` (`user_id`)
+);
+
+CREATE TABLE `favlist` (
+  `user_id` int(11) DEFAULT NULL,
+  `favorite_game_id` int(11) DEFAULT NULL,
+  KEY `favlist_users_fk` (`user_id`),
+  KEY `favlist_juegos_fk` (`favorite_game_id`),
+  CONSTRAINT `favlist_juegos_fk` FOREIGN KEY (`favorite_game_id`) REFERENCES `games` (`game_id`),
+  CONSTRAINT `favlist_users_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)
+);
+
+CREATE TABLE `friend_list` (
+  `follower_user_id` int(11) NOT NULL,
+  `followed_user_id` int(11) NOT NULL,
+  KEY `friendlist_users1_fk` (`follower_user_id`),
+  KEY `friendlist_users2_fk` (`followed_user_id`),
+  CONSTRAINT `friendlist_users1_fk` FOREIGN KEY (`follower_user_id`) REFERENCES `users` (`user_id`),
+  CONSTRAINT `friendlist_users2_fk` FOREIGN KEY (`followed_user_id`) REFERENCES `users` (`user_id`)
+);
+
+
+CREATE TABLE `user_match_list` (
+  `user_id` int(11) DEFAULT NULL,
+  `match_id` int(11) DEFAULT NULL,
+  KEY `usermatchlist_users_fk` (`user_id`),
+  KEY `usermatchlist_partidas_fk` (`match_id`),
+  CONSTRAINT `usermatchlist_partidas_fk` FOREIGN KEY (`match_id`) REFERENCES `matches` (`match_id`),
+  CONSTRAINT `usermatchlist_users_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)
+);
+
+
