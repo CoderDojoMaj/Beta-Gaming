@@ -1,5 +1,5 @@
 CREATE TABLE `users` (
-  `user_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `nickname` varchar(25) NOT NULL,
   `password` varchar(255) DEFAULT NULL,
   `name` varchar(25) DEFAULT NULL,
@@ -19,7 +19,7 @@ CREATE TABLE `game_genre` (
 );
 
 CREATE TABLE `games` (
-  `game_id` int(11) NOT NULL DEFAULT '0',
+  `game_id` int(11) NOT NULL AUTO_INCREMENT,
   `game_name` varchar(50) DEFAULT NULL,
   `min_age` int(11) DEFAULT NULL,
   `img_url` varchar(255) DEFAULT NULL,
