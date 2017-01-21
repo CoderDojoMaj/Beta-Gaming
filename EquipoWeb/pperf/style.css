@@ -1,0 +1,37 @@
+@font-face {
+    font-family: gamer;
+    src: url(Gamer.ttf);
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: 'gamer';
+	font-size: 60px;
+	text-align: center;
+	color: #008080;
+}
+
+label {
+	font-family: 'gamer';
+	text-align: center;
+	color: #008080;
+	font-size: 30px;
+}
+
+form > *:not(br){
+	margin-top: 20px;
+	
+}
+
+form {
+	margin-top: -40px;
+}
+
+input[type="submit"] {
+	background: linear-gradient(#8CFF8C ,#008000);
+	border: 2px solid  #004000;
+}
+
+button#cancel {
+	background: linear-gradient(#FF8080 ,#800000);
+	border: 2px solid  #400000;
+}
