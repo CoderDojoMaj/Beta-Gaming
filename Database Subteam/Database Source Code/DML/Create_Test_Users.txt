@@ -1,0 +1,62 @@
+insert into users (nickname, password, name, surname, email, rep, registry_date, born_date, skype_user )
+values ('Pedro-javierf', '123safepass', 'Pedro Javier', 'Fernández', 
+'pedro@realmail.com', 0, 
+STR_TO_DATE('03.10.2003 09.20', '%d.%m.%Y %H.%i'),
+STR_TO_DATE('03.10.1995 09.20', '%d.%m.%Y %H.%i'),
+'0FOAUF7AUD');
+
+insert into users (nickname, password, name, surname, email, rep, registry_date, born_date, skype_user )
+values ('Lukarion', '123456789', 'Lucas', 'Pazo', 
+'Lucaspazo@realmail.com', 0, 
+STR_TO_DATE('03.10.2003 09.20', '%d.%m.%Y %H.%i'),
+STR_TO_DATE('03.10.1995 09.20', '%d.%m.%Y %H.%i'),
+'0FOAUF7AfdafD');
+
+insert into users (nickname, password, name, surname, email, rep, registry_date, born_date, skype_user )
+values ('Spaceface', 'nohackersplz', 'Raul', 'Hernández', 
+'pedro@realmail.com', 0, 
+STR_TO_DATE('03.10.2003 09.20', '%d.%m.%Y %H.%i'),
+STR_TO_DATE('03.10.1995 09.20', '%d.%m.%Y %H.%i'),
+'0FOAUF7AUD');
+
+insert into users (nickname, password, name, surname, email, rep, registry_date, born_date, skype_user )
+values ('CR7', 'siuuuuuuuuu', 'Cristiano', 'Ronaldo', 
+'Ronal7@realmail.com', 0, 
+STR_TO_DATE('03.10.2003 09.20', '%d.%m.%Y %H.%i'),
+STR_TO_DATE('03.10.1995 09.20', '%d.%m.%Y %H.%i'),
+'0FOAdaasdCR7UD');
+
+insert into users (nickname, password, name, surname, email, rep, registry_date, born_date, skype_user )
+values ('DatBoi', 'Wadup', 'Frog', 'Jhonson', 
+'datfrog@realmail.com', 0, 
+STR_TO_DATE('03.10.2003 09.20', '%d.%m.%Y %H.%i'),
+STR_TO_DATE('03.10.1995 09.20', '%d.%m.%Y %H.%i'),
+'0FOAUF7AUD');
+
+insert into users (nickname, password, name, surname, email, rep, registry_date, born_date, skype_user )
+values ('Mememan', 'd8y7atdgusa', 'Jorge', 'Fernández', 
+'JorgeXXX@realmail.com', 0, 
+STR_TO_DATE('03.10.2003 09.20', '%d.%m.%Y %H.%i'),
+STR_TO_DATE('03.10.1995 09.20', '%d.%m.%Y %H.%i'),
+'0FOAUF7AUD');
+
+insert into users (nickname, password, name, surname, email, rep, registry_date, born_date, skype_user )
+values ('Vegeta777', 'PeroMadreMiaWilly', 'Niño', 'Rata', 
+'vegeta777@realmail.com', 0, 
+STR_TO_DATE('03.10.2003 09.20', '%d.%m.%Y %H.%i'),
+STR_TO_DATE('03.10.1995 09.20', '%d.%m.%Y %H.%i'),
+'0FOAUF7AUD');
+
+insert into users (nickname, password, name, surname, email, rep, registry_date, born_date, skype_user )
+values ('100x100LegitUser', 'lolbro', 'AiAi', 'Xd', 
+'100x100real@realmail.com', 0, 
+STR_TO_DATE('03.10.2003 09.20', '%d.%m.%Y %H.%i'),
+STR_TO_DATE('03.10.1995 09.20', '%d.%m.%Y %H.%i'),
+'0FOAUF7AUD');
+
+insert into users (nickname, password, name, surname, email, rep, registry_date, born_date, skype_user )
+values ('MC', 'imthechief', 'Master', 'Chief', 
+'MC117@realmail.com', 0, 
+STR_TO_DATE('03.10.2003 09.20', '%d.%m.%Y %H.%i'),
+STR_TO_DATE('03.10.1995 09.20', '%d.%m.%Y %H.%i'),
+'0FOAUF7AUD');
