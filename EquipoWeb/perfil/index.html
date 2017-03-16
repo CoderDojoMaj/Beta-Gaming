@@ -14,9 +14,21 @@ div.tab {
     background-color: #f1f1f1;
 }
 
+.button1 {
+			color: white; 
+				border: 2px solid #ffffff;
+				background-color: #000000;
+				color: white;
+				padding: 16px;
+				font-size: 16px;
+				border: none;
+				cursor: pointer;
+}
+
 /* Style the buttons inside the tab */
 div.tab button {
     background-color: inherit;
+
     float: left;
     border: none;
     outline: none;
@@ -77,13 +89,16 @@ div.tab button.active {
 				backgroud-color:#ffffff
 			}
 		 
-			.dropbtn {
+.dropbtn {
+				color: white; 
+				border: 2px solid #ffffff;
 				background-color: #000000;
 				color: white;
 				padding: 16px;
 				font-size: 16px;
 				border: none;
 				cursor: pointer;
+				
 			}
 
 
@@ -142,9 +157,9 @@ div.tab button.active {
 							<a href="#">Jugador</a>
 							</div>
 						</div></td>
-						<td><button>Ajustes </button></td>
-					<td><button>Tu nombre </button></td>
-					<td><a href="http://www.magnitopic.com/" target="_blank">LogIn</a></td>
+						<td><button class="button button1">Ajustes </button></td>
+					<td><button class="button button1">Tu nombre </button></td>
+					<td><input class="button button1" type="button" value="Perfil" onClick="location.href='http://www.magnitopic.com/'" /></td>
 					<td></center></td>
 				</tr>
 			</table>
