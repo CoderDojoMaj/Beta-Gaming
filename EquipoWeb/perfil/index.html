@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
-    <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/CoderDojoMaj/Beta-Gaming/master/templogo.png"/>
-		<title>BetaGaming-Welcome!!</title>
-		<style>/* Dropdown Button */
-			body {font-family: "Lato", sans-serif;}
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: "Lato", sans-serif;}
 
 /* Style the tab */
 div.tab {
@@ -67,26 +65,9 @@ div.tab button.active {
 
 
 		 	body{background-color:black}
-			
-		 .imgcontainer {
-				text-align: center;
-				margin: 24px 0 12px 0;
-				position: relative;
-			}
-			img.avatar {
-				width: 40%;
-			}
-			.container {
-				padding: 16px;
-			}
-			
-			span.psw {
-				float: right;
-				padding-top: 16px;
-			}
 		 
 			.ajustes{
-				backgroud-color:#ffffff
+				background-color:#ffffff
 			}
 		 
 .dropbtn {
@@ -140,11 +121,86 @@ div.tab button.active {
 				color:ffffff;
 			}
 			
-			
-		</style>
-	</head>
-	<body>
-		<center>
+
+
+
+
+/*mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm*/
+
+
+
+* {box-sizing:border-box}
+body {font-family: Verdana,sans-serif;}
+.mySlides {display:none}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+</style>
+</head>
+<body>
+<center>
 			<table bgcolor="#000000" style="width:100%" >
 				<tr>
 					<center>
@@ -166,9 +222,34 @@ div.tab button.active {
 			
 			<table  style="width:95%;height:500px">
 				<tr colspan="3">
-					<td bgcolor="#ffffff"><div class="imgcontainer">
-						<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal"></span>
-						<img src="http://www.startrek.com/uploads/assets/articles/9a5570aa205c967c350c52e4ad43bc8ab6fdecd0.png" alt="logo" class="avatar" style="width:1050px;height:1000%;"></td>
+					<td bgcolor="#ffffff"><div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="img_nature_wide.jpg" style="width:100%">
+  <div class="text">Este texto se puede cambiar</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="img_fjords_wide.jpg" style="width:100%">
+  <div class="text">Y este</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="img_mountains_wide.jpg" style="width:100%">
+  <div class="text">Y este tambien</div>
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div></td>
 				</div></tr>
 				<tr>
 					<td bgcolor="#ffffff"><div class="tab">
@@ -201,23 +282,44 @@ div.tab button.active {
 
 					<script>
 						function openCity(evt, cityName) {
-					var i, tabcontent, tablinks;
+					var e, tabcontent, tablinks;
 						tabcontent = document.getElementsByClassName("tabcontent");
-						for (i = 0; i < tabcontent.length; i++) {
-								tabcontent[i].style.display = "none";
+						for (e = 0; e < tabcontent.length; e++) {
+								tabcontent[e].style.display = "none";
 						}
 						tablinks = document.getElementsByClassName("tablinks");
-						for (i = 0; i < tablinks.length; i++) {
-								tablinks[i].className = tablinks[i].className.replace(" active", "");
+						for (e = 0; e < tablinks.length; e++) {
+								tablinks[e].className = tablinks[e].className.replace(" active", "");
 								}
 								document.getElementById(cityName).style.display = "block";
 								evt.currentTarget.className += " active";
 						}
 						document.getElementById("defaultOpen").click();
+						var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex> slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 5000); // Change image every 2 seconds
+}
 					</script></td>
 				</tr>
 			</table>
 			
 		</center>
-	</body>
-</html>
+
+
+</body>
+</html> 
