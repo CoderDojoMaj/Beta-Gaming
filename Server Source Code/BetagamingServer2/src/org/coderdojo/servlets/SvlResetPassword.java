@@ -28,13 +28,6 @@ public class SvlResetPassword extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
-
-    public void htmlDebug(String input, HttpServletResponse response) throws IOException
-    {
-    	//Envia a la página un mensaje de debug
-    	boolean debug = true;
-    	if(debug){response.getWriter().append("DBG: "+input);};
-    }
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -70,8 +63,8 @@ public class SvlResetPassword extends HttpServlet {
 		SessionIdentifierGenerator var = new SessionIdentifierGenerator();
 		String newRandomPassword = var.nextSessionId();
 		
-		//Envia email
-		sendRecoverEmail(targetEmail, newRandomPassword);
+		//Envia email TODO
+		//sendRecoverEmail(targetEmail, newRandomPassword);
 		
 		//Limpia
 		htmlDebug("Recovery Completed", response);

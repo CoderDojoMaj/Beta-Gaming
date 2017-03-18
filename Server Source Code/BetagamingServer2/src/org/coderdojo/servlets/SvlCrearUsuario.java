@@ -6,11 +6,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+
 //import org.apache.commons.validator.EmailValidator;//Not working from servlet?
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.coderdojo.bd.FabricaConexiones;
 
 
 
@@ -53,13 +56,6 @@ public class SvlCrearUsuario extends HttpServlet { //Creo que el jboss no está c
     	return false;
     }
     
-    
-    public void htmlDebug(String input, HttpServletResponse response) throws IOException
-    {
-    	//Envia a la página un mensaje de debug
-    	boolean debug = true;
-    	if(debug){response.getWriter().append("DBG: "+input);};
-    }
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -114,6 +110,18 @@ public class SvlCrearUsuario extends HttpServlet { //Creo que el jboss no está c
     	{
     		//writeDatabase(); Writes Username, hash, etc..
     		htmlDebug("hola", response);
+    		//1 pedimos la fabrica
+    		FabricaConexiones laFabria=FabricaConexiones.getFabrica();
+    		//pedimios una conexión
+    		try {
+				Connection conexion=laFabria.dameConexion();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+    		
+    		//RequestStatement rs;
+    		String myQuery = "insert into table usuarios(name,login,pass) values (?,?)";
     		response.sendRedirect("loginSuccess.html");
     	}
     	else
