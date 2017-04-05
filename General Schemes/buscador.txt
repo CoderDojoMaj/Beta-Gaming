@@ -1,0 +1,14 @@
+Descripción del servlet del buscador:
+
+Argumentos(doPost): String term, int type
+
+term: lo que hay que buscar
+type: tipo de busqueda:
+
+	0: partida
+	1: usuario
+	2: juego
+
+dependiendo del tipo lleva a un buscador más concreto pasando cómo argumento 'term' :
+	
+	partidas, usuarios o juegos
