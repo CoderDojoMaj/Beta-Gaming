@@ -9,6 +9,8 @@ type: tipo de busqueda:
 	1: usuario
 	2: juego
 
-dependiendo del tipo lleva a un buscador más concreto pasando cómo argumento 'term' :
+dependiendo del tipo lleva a un buscador más concreto pasando como argumento 'term' :
 	
-	partidas, usuarios o juegos
+	buscarPartidas(String term) -> Partida[]
+	buscarUsuarios(String term) -> User[]
+	buscarJuegos(String term) -> Game[]
