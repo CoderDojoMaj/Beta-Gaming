@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+    <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/CoderDojoMaj/Beta-Gaming/master/templogo.png"/>
+		<title>BetaGaming-Alonso</title>
+		
+		<style>
+		/* Style the close button */
+.topright {
+    float: right;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.topright:hover {color: red;}
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+img.avatar {
+    width: 40%;
+}
+.container {
+    padding: 16px;
+}
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4); 
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		body {font-family: "Lato", sans-serif;}
+
+		div.tab {
+			overflow: hidden;
+			border: 1px solid #ccc;
+			background-color: #f1f1f1;
+		}
+
+		.button1 {
+			color: white; 
+				border: 2px solid #ffffff;
+				background-color: #000000;
+				color: white;
+				padding: 16px;
+				font-size: 16px;
+				border: none;
+				cursor: pointer;
+		}
+		
+		.button2 {
+			color: white; 
+				border: 2px solid #ffffff;
+				background-color: #000000;
+				color: white;
+				padding: 16px;
+				font-size: 16px;
+				border: none;
+				cursor: pointer;
+		}
+
+		div.tab button {
+			background-color: inherit;
+			float: left;
+			border: none;
+			outline: none;
+			cursor: pointer;
+			padding: 14px 16px;
+			transition: 0.3s;
+			font-size: 17px;
+		}
+
+		div.tab button:hover {
+			background-color: #ddd;
+		}
+
+		div.tab button.active {
+			background-color: #ccc;
+		}
+
+		.tabcontent {
+				display: none;
+				padding: 6px 12px;
+				border: 1px solid #ccc;
+				border-top: none;
+			}
+			.topright {
+				float: right;
+				cursor: pointer;
+				font-size: 20px;
+			}
+
+			.topright:hover {color: red;}
+
+
+			body{background-color:black}
+		 
+			.dropbtn {
+				color: white; 
+				border: 2px solid #ffffff;
+				background-color: #000000;
+				color: white;
+				padding: 16px;
+				font-size: 16px;
+				border: none;
+				cursor: pointer;
+				
+			}
+
+
+			.dropdown {
+				position: relative;
+				display: inline-block;
+			}
+
+
+			.dropdown-content {
+				display: none;
+				position: absolute;
+				background-color: #f9f9f9;
+				min-width: 160px;
+				box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+				z-index: 1;
+			}
+
+			.dropdown-content a {
+				color: black;
+				padding: 12px 16px;
+				text-decoration: none;
+				display: block;
+			}
+
+			.dropdown-content a:hover {background-color: #f1f1f1}
+
+			.dropdown:hover .dropdown-content {
+				display: block;
+			}
+
+			.dropdown:hover .dropbtn {
+				background-color: #282828;
+				}
+				table td {
+				text-align: center;
+				}
+				table tr {
+				color:ffffff;
+			}
+
+			{box-sizing:border-box}
+			body {font-family: Verdana,sans-serif;}
+			.mySlides {display:none}
+
+			.slideshow-container {
+				max-width: 1000px;
+				position: relative;
+				margin: auto;
+			}
+
+			.text {
+				color: #f2f2f2;
+				font-size: 15px;
+				padding: 8px 12px;
+				position: absolute;
+				bottom: 8px;
+				width: 100%;
+				text-align: center;
+			}
+
+
+			.numbertext {
+				color: #f2f2f2;
+				font-size: 12px;
+				padding: 8px 12px;
+				position: absolute;
+				top: 0;
+			}
+
+
+			.dot {
+				height: 13px;
+				width: 13px;
+				margin: 0 2px;
+				background-color: #bbb;
+				border-radius: 50%;
+				display: inline-block;
+				transition: background-color 0.6s ease;
+			}
+
+			.active {
+				background-color: #717171;
+			}
+
+			.fade {
+				-webkit-animation-name: fade;
+				-webkit-animation-duration: 1.5s;
+				animation-name: fade;
+				animation-duration: 1.5s;
+			}
+
+			@-webkit-keyframes fade {
+				from {opacity: .4} 
+				to {opacity: 1}
+			}
+
+			@keyframes fade {
+				from {opacity: .4} 
+				to {opacity: 1}
+			}
+
+			@media only screen and (max-width: 300px) {
+				.text {font-size: 11px}
+			}
+			.div {
+				background-color: #ffffff;
+			}
+		</style>
+		
+	</head>
+	
+	<body>
+		<center>
+			<table  bgcolor="#000000" style="width:100%" >
+				<tr>
+					<center>
+					<td><div class="imgcontainer">
+							<img src="https://raw.githubusercontent.com/CoderDojoMaj/Beta-Gaming/master/templogo.png" alt="logo" class="avatar" style="width:70px;height:70px;">
+						</div></td>
+							<td>
+							<div class="dropdown">
+								<button class="dropbtn">New...</button>
+								<div class="dropdown-content">
+									<a href="#">Friends</a>
+									<a href="#">Partida</a>
+									<a href="#">Game</a>
+									<a href="#">Player</a>
+								</div>
+							</div>
+						</td>
+						<td><button class="button button2"><% out.println(session.getAttribute("usuario")); %></button></td>
+						<td><input class="button button1" type="image" src="lupa.png" width="24" height="24"></td>
+					</center>
+				</tr>
+			</table>
+		<table bgcolor="#ffffff">
+			<tr>
+				<td rowspan="10"><button></button><br><br><br><button></button><br><br><br><button></button></td>
+				<td rowspan="8"></td>
+				<td>Name</td>
+			</tr>
+			<tr>
+				<td><input type="text" name="nombredelacaja"></td>
+			</tr>
+			<tr>
+					<td>E-mail</td>
+			</tr>
+			<tr>
+				<td><input type="text" name="nombredelacaja"></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+			</tr>
+			<tr>
+				<td><input type="text" name="nombredelacaja"></td>
+			</tr>
+			<tr>
+				<td>Date of birth</td>
+			</tr>
+			<tr>
+				<td><input type="date" name="bday"></td>
+			</tr>
+			<tr>
+				<td></td>
+			</tr>
+		</table>
+		</center>
+	</body>
+</html>
