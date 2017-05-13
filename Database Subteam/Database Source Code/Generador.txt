@@ -1,10 +1,10 @@
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
-  `nickname` varchar(25) NOT NULL,
+  `nickname` varchar(25) NOT NULL UNIQUE,
   `password` varchar(255) DEFAULT NULL,
   `name` varchar(25) DEFAULT NULL,
   `surname` varchar(25) DEFAULT NULL,
-  `email` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL UNIQUE,
   `rep` int(11) DEFAULT NULL,
   `registry_date` date DEFAULT NULL,
   `born_date` date DEFAULT NULL,
