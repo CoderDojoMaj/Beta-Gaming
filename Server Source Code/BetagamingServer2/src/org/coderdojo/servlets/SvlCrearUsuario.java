@@ -17,8 +17,8 @@ import org.coderdojo.bd.FabricaConexiones;
 
 
 
-
-public class SvlCrearUsuario extends HttpServlet { //Creo que el jboss no est· cargado correctamente si da error aquÌ
+//Check for jboss initialized here
+public class SvlCrearUsuario extends HttpServlet { //Creo que el jboss no est√° cargado correctamente si da error aqu√≠
 	private static final long serialVersionUID = 1L;
 
 	
@@ -29,14 +29,14 @@ public class SvlCrearUsuario extends HttpServlet { //Creo que el jboss no est· c
     }
 
     public boolean isStrongPassword(String inputPassword) {
-        // Comprueba si una contraseÒa es suficientemente fuerte
+        // Comprueba si una contrase√±a es suficientemente fuerte
     	boolean check1 = false, check2 = false, check3 = false;
     	
     	//Texto suficientemente largo
     	if (inputPassword.length() >= 7)
     	{check1=true;}; 
     	
-    	//Contiene alg˙n numero
+    	//Contiene alg√∫n numero
     	if (inputPassword.matches(".*\\d+.*"))
     	{check2=true;};
     	
@@ -57,11 +57,10 @@ public class SvlCrearUsuario extends HttpServlet { //Creo que el jboss no est· c
     }
     
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	}
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	// TODO Auto-generated method stub
+}
 
-	
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -81,56 +80,46 @@ public class SvlCrearUsuario extends HttpServlet { //Creo que el jboss no est· c
 		String email = request.getParameter("mail");
 		String skype = request.getParameter("skype");
     	
-    	boolean validUsername = false;
-    	boolean validPassword = false;
-    	boolean validEMAIL = false;
-    	
-    	//Esta logica puede estar mal
-    	if ( (username.length() >= 4) && ( !userInDB(username) ) )
-    	{
-    		validUsername = true;
-    	};
-    	
-    	
-    	if (isStrongPassword(password))
-    	{
-    		validPassword = true;
-    	};
-    	
-    	
-    	//Check if the function is imported correctly
-    	/*
-    	EmailValidator validator = EmailValidator.getInstance(); AÒadir if email not in database
-    	if (validator.isValid(email))
-    	{
-    		validEMAIL = true;
-    	};*/
-    	
-    	if( validUsername && validPassword && validEMAIL )
-    	{
-    		//writeDatabase(); Writes Username, hash, etc..
-    		htmlDebug("hola", response);
-    		//1 pedimos la fabrica
-    		FabricaConexiones laFabria=FabricaConexiones.getFabrica();
-    		//pedimios una conexiÛn
-    		try {
-				Connection conexion=laFabria.dameConexion();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-    		
-    		//RequestStatement rs;
-    		String myQuery = "insert into table usuarios(name,login,pass) values (?,?)";
-    		response.sendRedirect("loginSuccess.html");
-    	}
-    	else
-    	{
-    		
-    		response.sendRedirect("loginError.html");
-    	};
-		
-    	
+		boolean validUsername = false;
+		boolean validPassword = false;
+		boolean validEMAIL = false;
+
+		//Esta logica puede estar mal
+		//if ( (username.length() >= 4) && ( !userInDB(username) ) )
+		if ( (username.length() >= 4) && (userInDB(username) ) )
+		{
+			validUsername = true;
+		};
+
+		if (isStrongPassword(password))
+		{
+			validPassword = true;
+		};
+
+		if( validUsername && validPassword && validEMAIL )
+		{
+			//writeDatabase(); Writes Username, hash, etc..
+			htmlDebug("hola", response);
+			//1 pedimos la fabrica
+			FabricaConexiones laFabria=FabricaConexiones.getFabrica();
+			//pedimios una conexi√≥n
+			try {
+					Connection conexion=laFabria.dameConexion();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+			//RequestStatement rs;
+			String myQuery = "insert into table usuarios(name,login,pass) values (?,?)";
+			response.sendRedirect("loginSuccess.html");
+		}
+		else
+		{
+			response.sendRedirect("loginError.html");
+		};
+
+
 	}
 
 }
